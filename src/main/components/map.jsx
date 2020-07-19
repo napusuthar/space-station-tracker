@@ -14,10 +14,10 @@ class Map extends Component{
 
     setLocation(){
       fetchLocation()
-          .then(res => this.setState({
-            slat: parseInt(res.iss_position.latitude),
-            slng: parseInt(res.iss_position.longitude)
-        }))
+          .then(res => res ?  this.setState({
+              slat: parseInt(res.iss_position.latitude),
+              slng: parseInt(res.iss_position.longitude)
+          }): null)
     }
 
     componentDidMount(){
